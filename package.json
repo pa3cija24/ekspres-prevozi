@@ -1,0 +1,8 @@
+{
+  "name": "ekspres-prevozi-prpar",
+  "private": true,
+  "description": "Spletna stran Ekspres prevozi Marko Prpar s.p.",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

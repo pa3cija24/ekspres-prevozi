@@ -1,0 +1,189 @@
+:root {
+    --burgundy: #3e2f26;
+    --burgundy-dark: #261c16;
+    --cream: #faf8f4;
+    --cream-dark: #f0ebe2;
+    --brown: #2e2520;
+    --gold: #b08350;
+    --line: #e2dacb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--brown);
+    background: var(--cream);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .btn, nav a, .eyebrow, label {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.narrow { width: min(760px, 92%); }
+.hidden { display: none; }
+
+/* Glava */
+.site-header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-dark);
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: .6rem 0; position: relative; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+.logo { width: 52px; height: 52px; object-fit: contain; }
+.brand-text { font-family: "Segoe UI", Arial, sans-serif; font-size: .95rem; line-height: 1.2; }
+.brand-text strong { display: block; font-size: 1.1rem; color: var(--burgundy); }
+
+.main-nav { display: flex; align-items: center; gap: 1.4rem; }
+.main-nav a { text-decoration: none; font-weight: 500; padding-bottom: 4px; transition: .3s; }
+.main-nav a:not(.btn):hover { color: var(--burgundy); border-bottom: 2px solid var(--burgundy); }
+
+.menu-toggle { display: none; background: none; border: 0; font-size: 1.9rem; color: var(--burgundy); cursor: pointer; }
+
+/* Gumbi */
+.btn {
+    display: inline-block; background: var(--burgundy); color: #fff;
+    padding: .8rem 1.6rem; border-radius: 6px; text-decoration: none;
+    font-weight: 600; border: 2px solid var(--burgundy); cursor: pointer;
+    font-size: 1rem; transition: .3s;
+}
+.btn:hover { background: var(--burgundy-dark); border-color: var(--burgundy-dark); }
+.btn-small { padding: .45rem 1rem; font-size: .95rem; color: #fff !important; }
+.btn-outline { background: transparent; border-color: #fff; }
+.btn-outline:hover { background: #fff; color: var(--burgundy); border-color: #fff; }
+
+/* Hero */
+.hero { background: url("images/main_image.jpg") center/cover no-repeat; }
+.hero-overlay { background: linear-gradient(90deg, rgba(25,18,13,.85), rgba(25,18,13,.4)); padding: 6rem 0; }
+.hero-content { color: #fff; max-width: 1100px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .15em; color: var(--gold); font-size: .85rem; margin-bottom: .8rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; max-width: 14em; margin-bottom: 1rem; }
+.lead { font-size: 1.2rem; max-width: 36em; margin-bottom: 2rem; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* Poudarki */
+.highlights { background: var(--burgundy); color: #fff; padding: 2.2rem 0; }
+.highlight h3 { color: var(--gold); margin-bottom: .3rem; }
+
+/* Sekcije */
+.section { padding: 4.5rem 0; }
+.section-alt { background: var(--cream-dark); }
+.section-dark { background: var(--brown); color: var(--cream); }
+.section h2 { font-size: 2.1rem; color: var(--burgundy); margin-bottom: 1rem; }
+.section-dark h2 { color: var(--gold); }
+.section-intro { max-width: 40em; margin-bottom: 2rem; }
+.narrow p { margin-bottom: 1rem; font-size: 1.1rem; }
+
+.grid { display: grid; gap: 1.6rem; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+
+/* Kartice */
+.card { text-decoration: none; color: inherit; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); transition: .3s; display: flex; flex-direction: column; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+.card img { width: 100%; height: 190px; object-fit: cover; }
+.card-body { padding: 1.2rem; }
+.card-body h3 { color: var(--burgundy); margin-bottom: .4rem; }
+.price { margin-top: .8rem; font-weight: 700; font-family: "Segoe UI", Arial, sans-serif; color: var(--gold); }
+.card-plain { background: var(--cream-dark); border: 1px solid var(--line); justify-content: center; box-shadow: none; }
+
+/* Storitve */
+.feature { background: #fff; padding: 1.5rem; border-radius: 6px; border-top: 3px solid var(--gold); }
+.feature h3 { color: var(--burgundy); margin-bottom: .4rem; }
+.steps-title { margin: 2.5rem 0 1rem; color: var(--burgundy); }
+.steps { padding-left: 1.4rem; }
+.steps li { margin-bottom: .5rem; }
+
+/* Kontakt */
+.contact-list { list-style: none; margin-bottom: 1.5rem; }
+.contact-list li { margin-bottom: 1rem; }
+.contact-list span { display: block; font-family: "Segoe UI", Arial, sans-serif; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); }
+.contact-list a { text-decoration: none; font-size: 1.15rem; }
+.contact-list a:hover { text-decoration: underline; }
+.map { width: 100%; height: 260px; border: 0; border-radius: 8px; }
+
+.contact-form { display: flex; flex-direction: column; gap: .5rem; background: var(--cream); color: var(--brown); padding: 1.6rem; border-radius: 6px; }
+.contact-form label { font-weight: 600; font-size: .9rem; }
+.contact-form input, .contact-form textarea {
+    padding: .7rem; border: 1px solid #c9b99f; border-radius: 6px; font: inherit; margin-bottom: .6rem;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--burgundy); }
+
+/* Noga */
+.site-footer { background: var(--burgundy-dark); color: var(--cream); text-align: center; padding: 1.4rem 0; font-size: .9rem; }
+
+/* Mobilno */
+@media (max-width: 860px) {
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+    .menu-toggle { display: block; }
+    .main-nav {
+        display: none; position: absolute; top: 100%; left: -4%; right: -4%;
+        background: var(--cream); flex-direction: column; align-items: stretch;
+        padding: 1rem 4%; gap: 1rem; border-bottom: 1px solid var(--cream-dark);
+        box-shadow: 0 6px 10px rgba(0,0,0,.1);
+    }
+    .main-nav.open { display: flex; }
+    .main-nav .btn { text-align: center; }
+    .hero-overlay { padding: 4rem 0; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .section { padding: 3rem 0; }
+}
+
+/* Kartice: povezava */
+.more { display: inline-block; margin-top: .6rem; font-family: "Segoe UI", Arial, sans-serif; font-size: .9rem; font-weight: 600; color: var(--burgundy); }
+.card:hover .more { color: var(--gold); }
+
+/* Stran kategorije */
+.back-link { display: inline-block; margin-bottom: 1rem; font-family: "Segoe UI", Arial, sans-serif; text-decoration: none; color: var(--gold); font-weight: 600; }
+.back-link:hover { text-decoration: underline; }
+.page-title { font-size: 2.2rem; color: var(--burgundy); margin-bottom: .5rem; }
+.price-list { border-top: 1px solid var(--line); margin-bottom: 1.5rem; }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.price-row h3 { font-size: 1.1rem; color: var(--brown); }
+.price-row p { font-size: .95rem; margin: .1rem 0 0; opacity: .75; }
+.price-value { font-family: "Segoe UI", Arial, sans-serif; font-weight: 700; font-size: 1.15rem; white-space: nowrap; color: var(--burgundy); }
+.price-value span { font-weight: 400; font-size: .9rem; opacity: .7; }
+.note { font-size: .95rem; opacity: .85; margin-bottom: 2.5rem; }
+.other-cats h2 { font-size: 1.1rem; margin-bottom: .6rem; }
+.other-cats a { display: inline-block; margin: 0 .6rem .6rem 0; padding: .4rem .9rem; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; font-family: "Segoe UI", Arial, sans-serif; font-size: .9rem; }
+.other-cats a:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Gumb v hero razdelku (svetlejši, da izstopa na temni podlagi) */
+.hero .btn:not(.btn-outline) { background: var(--gold); border-color: var(--gold); }
+.hero .btn:not(.btn-outline):hover { background: #c19460; border-color: #c19460; }
+
+/* Admin */
+.btn-ghost { background: transparent; color: var(--burgundy); }
+.btn-ghost:hover { background: var(--cream-dark); color: var(--burgundy); border-color: var(--burgundy); }
+.admin .narrow { width: min(900px, 94%); }
+.admin-cat { margin-bottom: 2.2rem; }
+.admin-cat h2 { font-size: 1.3rem; margin-bottom: .8rem; }
+.admin-row { display: grid; grid-template-columns: 2fr 3fr 90px 70px 36px; gap: .5rem; margin-bottom: .5rem; }
+.admin-row input, .admin input[type=password] { padding: .55rem; border: 1px solid #c9b99f; border-radius: 4px; font: inherit; font-size: .95rem; min-width: 0; }
+.admin-row input:focus { outline: 2px solid var(--burgundy); }
+.admin-del { border: 1px solid var(--line); background: #fff; border-radius: 4px; font-size: 1.3rem; cursor: pointer; color: #8a3b2e; }
+.admin-del:hover { background: #f6e9e6; }
+.admin-bar { position: sticky; bottom: 0; background: var(--cream); border-top: 1px solid var(--line); padding: 1rem 0; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.admin-msg { font-family: "Segoe UI", Arial, sans-serif; font-size: .95rem; }
+.admin-msg.error { color: #9b2c1f; }
+.admin-msg.ok { color: #3f6b3a; }
+[hidden] { display: none !important; }
+@media (max-width: 720px) {
+    .admin-row { grid-template-columns: 1fr 1fr 36px; }
+    .admin-row .f-ime, .admin-row .f-opis { grid-column: 1 / 3; }
+    .admin-row .f-cena { grid-column: 1; }
+    .admin-row .f-enota { grid-column: 2; }
+    .admin-row .admin-del { grid-column: 3; grid-row: 1 / span 3; height: auto; }
+}

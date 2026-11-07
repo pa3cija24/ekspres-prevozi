@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin | Ekspres prevozi Marko Prpar s.p.</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="izdelki.js" defer></script>
+    <script src="admin.js" defer></script>
+</head>
+<body class="admin">
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand">
+            <img src="images/icon.png" alt="" class="logo">
+            <span class="brand-text">Admin <strong>Ekspres prevozi</strong></span>
+        </a>
+        <button id="odjava" class="btn btn-small" hidden>Odjava</button>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container narrow">
+
+        <!-- Prijava -->
+        <form id="prijava" class="contact-form">
+            <h1 class="page-title">Prijava</h1>
+            <label for="geslo">Geslo</label>
+            <input type="password" id="geslo" autocomplete="current-password" required>
+            <button type="submit" class="btn">Prijava</button>
+            <p id="prijava-napaka" class="admin-msg error" role="alert"></p>
+        </form>
+
+        <!-- Urejanje -->
+        <div id="urejanje" hidden>
+            <h1 class="page-title">Izdelki in cene</h1>
+            <p class="section-intro">Spremenite izdelke, nato kliknite <strong>Shrani</strong>. Spremembe se na strani pokažejo takoj.</p>
+            <div id="kategorije-admin"></div>
+            <div class="admin-bar">
+                <button id="shrani" class="btn">Shrani spremembe</button>
+                <button id="ponastavi" class="btn btn-ghost" type="button">Razveljavi spremembe</button>
+                <span id="stanje" class="admin-msg" role="status"></span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+</body>
+</html>
