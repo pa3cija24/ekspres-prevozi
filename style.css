@@ -170,7 +170,10 @@ a { color: inherit; }
 .admin .narrow { width: min(900px, 94%); }
 .admin-cat { margin-bottom: 2.2rem; }
 .admin-cat h2 { font-size: 1.3rem; margin-bottom: .8rem; }
-.admin-row { display: grid; grid-template-columns: 2fr 3fr 90px 70px 36px; gap: .5rem; margin-bottom: .5rem; }
+.admin-row { display: grid; grid-template-columns: 1fr 150px 36px; gap: .5rem; margin-bottom: .5rem; align-items: center; }
+.f-cena-wrap { display: flex; align-items: center; gap: .4rem; }
+.f-cena-wrap input { width: 100%; }
+.f-cena-wrap span { font-family: "Segoe UI", Arial, sans-serif; font-size: .9rem; white-space: nowrap; }
 .admin-row input, .admin input[type=password] { padding: .55rem; border: 1px solid #c9b99f; border-radius: 4px; font: inherit; font-size: .95rem; min-width: 0; }
 .admin-row input:focus { outline: 2px solid var(--burgundy); }
 .admin-del { border: 1px solid var(--line); background: #fff; border-radius: 4px; font-size: 1.3rem; cursor: pointer; color: #8a3b2e; }
@@ -181,9 +184,5 @@ a { color: inherit; }
 .admin-msg.ok { color: #3f6b3a; }
 [hidden] { display: none !important; }
 @media (max-width: 720px) {
-    .admin-row { grid-template-columns: 1fr 1fr 36px; }
-    .admin-row .f-ime, .admin-row .f-opis { grid-column: 1 / 3; }
-    .admin-row .f-cena { grid-column: 1; }
-    .admin-row .f-enota { grid-column: 2; }
-    .admin-row .admin-del { grid-column: 3; grid-row: 1 / span 3; height: auto; }
+    .admin-row { grid-template-columns: 1fr 130px 36px; }
 }

@@ -7,11 +7,11 @@ const KATEGORIJE = [
         opis: "Zrezki, golaž, juhno meso in pečenke.",
         slika: "images/beef.jpg",
         izdelki: [
-            { ime: "Goveji zrezek", opis: "Mehak zrezek za na žar ali ponev", cena: 18.00, enota: "kg" },
-            { ime: "Goveji golaž", opis: "Kosi za golaž in enolončnice", cena: 10.50, enota: "kg" },
-            { ime: "Goveja pečenka", opis: "Za počasno peko v pečici", cena: 13.00, enota: "kg" },
-            { ime: "Juhno meso", opis: "Z in brez kosti", cena: 8.50, enota: "kg" },
-            { ime: "Mleto goveje meso", opis: "Sveže mleto po naročilu", cena: 9.50, enota: "kg" }
+            { ime: "Goveji zrezek", cena: 18.00, enota: "kg" },
+            { ime: "Goveji golaž", cena: 10.50, enota: "kg" },
+            { ime: "Goveja pečenka", cena: 13.00, enota: "kg" },
+            { ime: "Juhno meso", cena: 8.50, enota: "kg" },
+            { ime: "Mleto goveje meso", cena: 9.50, enota: "kg" }
         ]
     },
     {
@@ -20,12 +20,12 @@ const KATEGORIJE = [
         opis: "Vrat, kotleti, ribice, pleče in mleto meso.",
         slika: "images/pork.jpg",
         izdelki: [
-            { ime: "Svinjski vrat", opis: "Za žar in peko", cena: 8.50, enota: "kg" },
-            { ime: "Svinjski kotlet", opis: "S kostjo ali brez", cena: 7.50, enota: "kg" },
-            { ime: "Svinjska ribica", opis: "Mehko meso za ocvrtje", cena: 6.50, enota: "kg" },
-            { ime: "Svinjsko pleče", opis: "Za pečenko in golaž", cena: 6.50, enota: "kg" },
-            { ime: "Svinjska rebra", opis: "Za peko in žar", cena: 6.00, enota: "kg" },
-            { ime: "Mleto svinjsko meso", opis: "Sveže mleto po naročilu", cena: 6.90, enota: "kg" }
+            { ime: "Svinjski vrat", cena: 8.50, enota: "kg" },
+            { ime: "Svinjski kotlet", cena: 7.50, enota: "kg" },
+            { ime: "Svinjska ribica", cena: 6.50, enota: "kg" },
+            { ime: "Svinjsko pleče", cena: 6.50, enota: "kg" },
+            { ime: "Svinjska rebra", cena: 6.00, enota: "kg" },
+            { ime: "Mleto svinjsko meso", cena: 6.90, enota: "kg" }
         ]
     },
     {
@@ -34,10 +34,10 @@ const KATEGORIJE = [
         opis: "Cele piščance, prsi, bedra in krilca.",
         slika: "images/chicken.jpg",
         izdelki: [
-            { ime: "Cel piščanec", opis: "Za peko ali kuhanje", cena: 5.00, enota: "kg" },
-            { ime: "Piščančje prsi", opis: "Brez kosti in kože", cena: 8.50, enota: "kg" },
-            { ime: "Piščančja bedra", opis: "Zgornja in spodnja", cena: 5.50, enota: "kg" },
-            { ime: "Piščančja krilca", opis: "Za žar in pečico", cena: 4.50, enota: "kg" }
+            { ime: "Cel piščanec", cena: 5.00, enota: "kg" },
+            { ime: "Piščančje prsi", cena: 8.50, enota: "kg" },
+            { ime: "Piščančja bedra", cena: 5.50, enota: "kg" },
+            { ime: "Piščančja krilca", cena: 4.50, enota: "kg" }
         ]
     },
     {
@@ -46,9 +46,9 @@ const KATEGORIJE = [
         opis: "Hrbet, stegno in rebra. Po naročilu.",
         slika: "images/lamb.jpg",
         izdelki: [
-            { ime: "Jagnječji hrbet", opis: "Po naročilu", cena: 18.00, enota: "kg" },
-            { ime: "Jagnječje stegno", opis: "Po naročilu", cena: 14.00, enota: "kg" },
-            { ime: "Jagnječja rebra", opis: "Po naročilu", cena: 12.00, enota: "kg" }
+            { ime: "Jagnječji hrbet", cena: 18.00, enota: "kg" },
+            { ime: "Jagnječje stegno", cena: 14.00, enota: "kg" },
+            { ime: "Jagnječja rebra", cena: 12.00, enota: "kg" }
         ]
     },
     {
@@ -57,9 +57,9 @@ const KATEGORIJE = [
         opis: "Občasno na voljo. Vprašajte po trenutni ponudbi.",
         slika: "images/meat_products.jpg",
         izdelki: [
-            { ime: "Domača salama", opis: "Občasno na voljo", cena: 18.00, enota: "kg" },
-            { ime: "Domače klobase", opis: "Občasno na voljo", cena: 12.00, enota: "kg" },
-            { ime: "Domači špeh", opis: "Občasno na voljo", cena: 6.00, enota: "kg" }
+            { ime: "Domača salama", cena: 18.00, enota: "kg" },
+            { ime: "Domače klobase", cena: 12.00, enota: "kg" },
+            { ime: "Domači špeh", cena: 6.00, enota: "kg" }
         ]
     },
     {
@@ -68,7 +68,7 @@ const KATEGORIJE = [
         opis: "Fižol in druga hrana po dogovoru.",
         slika: null,
         izdelki: [
-            { ime: "Fižol", opis: "Po dogovoru", cena: 4.00, enota: "kg" }
+            { ime: "Fižol", cena: 4.00, enota: "kg" }
         ]
     }
 ];

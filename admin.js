@@ -28,16 +28,17 @@ function narisi() {
             <div class="admin-rows">
                 ${k.izdelki.map((i, ii) => vrstica(ki, ii, i)).join('')}
             </div>
-            <button type="button" class="btn btn-ghost btn-small" data-dodaj="${ki}">+ Dodaj izdelek</button>
+            <button type="button" class="btn btn-small" data-dodaj="${ki}">+ Dodaj izdelek</button>
         </section>`).join('');
 }
 
 function vrstica(ki, ii, i) {
     return `<div class="admin-row" data-ki="${ki}" data-ii="${ii}">
-        <input class="f-ime" type="text" placeholder="Ime izdelka" value="${esc(i.ime)}" aria-label="Ime">
-        <input class="f-opis" type="text" placeholder="Opis (neobvezno)" value="${esc(i.opis)}" aria-label="Opis">
-        <input class="f-cena" type="number" min="0" step="0.01" placeholder="Cena" value="${esc(i.cena)}" aria-label="Cena v evrih">
-        <input class="f-enota" type="text" placeholder="kg" value="${esc(i.enota)}" maxlength="10" aria-label="Enota">
+        <input class="f-ime" type="text" placeholder="Ime izdelka" value="${esc(i.ime)}" aria-label="Ime izdelka">
+        <div class="f-cena-wrap">
+            <input class="f-cena" type="number" min="0" step="0.01" placeholder="Cena" value="${esc(i.cena)}" aria-label="Cena za kilogram v evrih">
+            <span>€/kg</span>
+        </div>
         <button type="button" class="admin-del" data-brisi title="Odstrani izdelek" aria-label="Odstrani izdelek">&times;</button>
     </div>`;
 }
@@ -47,9 +48,7 @@ function preberi() {
     document.querySelectorAll('.admin-row').forEach(v => {
         const i = kategorije[v.dataset.ki].izdelki[v.dataset.ii];
         i.ime = v.querySelector('.f-ime').value;
-        i.opis = v.querySelector('.f-opis').value;
         i.cena = v.querySelector('.f-cena').value;
-        i.enota = v.querySelector('.f-enota').value || 'kg';
     });
 }
 
@@ -82,7 +81,7 @@ $('kategorije-admin').addEventListener('click', e => {
     const dodaj = e.target.closest('[data-dodaj]');
     const brisi = e.target.closest('[data-brisi]');
     if (dodaj) {
-        kategorije[dodaj.dataset.dodaj].izdelki.push({ ime: '', opis: '', cena: '', enota: 'kg' });
+        kategorije[dodaj.dataset.dodaj].izdelki.push({ ime: '', cena: '' });
         narisi();
         const vrstice = document.querySelectorAll(`.admin-row[data-ki="${dodaj.dataset.dodaj}"]`);
         vrstice[vrstice.length - 1].querySelector('.f-ime').focus();
@@ -112,7 +111,7 @@ $('shrani').addEventListener('click', async () => {
             if (!i.ime.trim() || !Number.isFinite(cena) || cena < 0) {
                 return sporocilo($('stanje'), `Preverite izdelek v "${k.naslov}": potrebno je ime in veljavna cena.`, true);
             }
-            podatki[k.id].push({ ime: i.ime.trim(), opis: i.opis.trim(), cena, enota: i.enota.trim() || 'kg' });
+            podatki[k.id].push({ ime: i.ime.trim(), opis: '', cena, enota: 'kg' });
         }
     }
     sporocilo($('stanje'), 'Shranjujem …');
