@@ -127,16 +127,19 @@
                     <iframe class="map" title="Zemljevid: Svetinja 6, Dobrnič" loading="lazy"
                         src="https://www.google.com/maps?q=Svetinja+6,+8211+Dobrni%C4%8D&output=embed"></iframe>
                 </div>
-                <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/hvala.html">
-                    <input type="hidden" name="form-name" value="kontakt">
-                    <p class="hidden"><label>Ne izpolnjujte: <input name="bot-field"></label></p>
+                <form class="contact-form" id="kontaktni-obrazec" method="POST" action="https://api.web3forms.com/submit">
+                    <input type="hidden" name="access_key" value="045b24f8-2a3e-41f8-8f41-3614fcc84ab4">
+                    <input type="hidden" name="subject" value="Novo sporočilo s spletne strani">
+                    <input type="hidden" name="from_name" value="Spletna stran Ekspres prevozi">
+                    <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
                     <label for="ime">Ime in priimek</label>
-                    <input type="text" id="ime" name="ime" required>
+                    <input type="text" id="ime" name="name" required>
                     <label for="kontakt-podatek">Telefon ali e-pošta</label>
-                    <input type="text" id="kontakt-podatek" name="telefon-ali-eposta" required>
+                    <input type="text" id="kontakt-podatek" name="Telefon ali e-pošta" required>
                     <label for="sporocilo">Sporočilo / naročilo</label>
-                    <textarea id="sporocilo" name="sporocilo" rows="5" required></textarea>
+                    <textarea id="sporocilo" name="message" rows="5" required></textarea>
                     <button type="submit" class="btn">Pošlji sporočilo</button>
+                    <p id="obrazec-stanje" class="admin-msg" role="status"></p>
                 </form>
             </div>
         </div>

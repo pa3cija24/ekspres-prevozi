@@ -65,3 +65,33 @@ naloziKategorije().then(kategorije => {
         }
     }
 });
+
+// Kontaktni obrazec (Web3Forms): pošlje sporočilo in odpre stran "Hvala"
+const obrazec = document.getElementById('kontaktni-obrazec');
+if (obrazec) {
+    obrazec.addEventListener('submit', async e => {
+        e.preventDefault();
+        const stanje = document.getElementById('obrazec-stanje');
+        const gumb = obrazec.querySelector('button[type=submit]');
+        gumb.disabled = true;
+        stanje.className = 'admin-msg';
+        stanje.textContent = 'Pošiljam …';
+        try {
+            const r = await fetch(obrazec.action, {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: new FormData(obrazec)
+            });
+            const d = await r.json();
+            if (r.ok && d.success) {
+                location.href = 'hvala.html';
+                return;
+            }
+            throw new Error(d.message || 'Napaka');
+        } catch (err) {
+            stanje.className = 'admin-msg error';
+            stanje.textContent = 'Sporočila ni bilo mogoče poslati. Poskusite znova ali nas pokličite na 031 652 949.';
+            gumb.disabled = false;
+        }
+    });
+}
